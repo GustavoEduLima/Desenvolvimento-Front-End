@@ -1,0 +1,18 @@
+<script type="module" src="blog.ts"></script>
+
+<div *ngFor="let post of posts" class="card">
+    <h2>{{ post.titulo }}</h2>
+    <p>Autor: {{ post.autor }} | Data: {{ post.data }}</p>
+    <p>{{ post.conteudo }}</p>
+    <p>Curtidas: {{ post.curtidas }}</p>
+
+
+    <button (click)="curtir(post)">Curtir</button>
+
+    <input [(ngModel)]="novoComentario" placeholder="Digite seu comentário">
+    <button (click)="adicionarComentario(post, novoComentario); novoComentario=''">Comentar</button>
+
+    <ul>
+        <li *ngFor="let c of post.comentarios">{{ c }}</li>
+    </ul>
+</div>

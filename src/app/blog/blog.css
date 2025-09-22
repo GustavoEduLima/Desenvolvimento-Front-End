@@ -1,0 +1,17 @@
+.card {
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin: 10px;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+input {
+  margin-right: 5px;
+}
+button {
+  margin-top: 5px;
+  cursor: pointer;
+}
+ul {
+  margin-top: 10px;
+}
