@@ -1,0 +1,23 @@
+<h1>Tarefas ({{service.listaTarefas.length}})</h1>
+
+<ul>
+  @if(service.listaTarefas.length == 0){
+    <h3>Nenhuma tarefa cadastrada</h3>
+  }@else{
+    @for (tarefa of service.listaTarefas; track $index) {
+      <li>
+        {{tarefa.descricao}}
+        <br>
+        status: {{tarefa.status}}
+        <br>
+        <div style="display: flex;">
+        @if(tarefa.status == "pendente"){
+          <button (click)="service.marcarConcluida(tarefa.id)" style="margin-right: 5px;">Concluir</button>
+        }
+        <button (click)="service.remover(tarefa.id)">Remover</button>
+      </div>
+      </li>
+      <br>
+    }
+  }
+</ul>
